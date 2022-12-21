@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/app.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-blue-200">
+    <section class="flex flex-col items-center">
+      <a
+        href="/blogs"
+        class="mt-9 mb-4 text-3xl bg-yellow-200 py-2 px-6 rounded-full"
+        ><ion-icon name="caret-back-outline"></ion-icon>All Blogs</a
+      >
+      <div class=" border-2 border-blue-600 blog w-[500px] h-[500px] bg-blue-500 text-white p-4">
+        <h1 class="text-4xl text-center mb-4">My Post</h1>
+        <div class="flex flex-col space-y-6">
+          <p class="text-lg"><strong>Username : </strong><%= foundBlog.username%></p>
+          <p class="text-lg"><strong>Description : </strong><%=foundBlog.description %></p>
+        </div>
+      </div>
+    </section>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>

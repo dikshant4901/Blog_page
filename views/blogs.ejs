@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class=" bg-blue-200 flex flex-col items-center space-y-4">
+    <h1 class="mt-4 text-5xl">All Blogs</h1>
+    <a
+      href="/blogs/add"
+      class="text-white bg-green-500 p-3 rounded-full hover:bg-green-600"
+    >
+      New Blog</a
+    >
+    <ul>
+      <% for(let item of blogs) { %>
+      <li class="border border-black mb-4 p-3 w-96">
+        <strong>Username : <%=item.username %></strong><br />
+       <strong>Description : </strong> <%=item.description %>
+        <br />
+        <div class="flex space-x-3 mt-4">
+          <a class="text-white hover:bg-blue-600 bg-blue-500 py-2 px-4 rounded-full" href="/blogs/<%=item.id%>">View</a>
+          <a class="text-white hover:bg-blue-600 bg-blue-500 py-2 px-4 rounded-full" href="/blogs/<%=item.id%>/edit">Edit</a>
+          <form class="text-white hover:bg-red-600 bg-red-500 py-2 px-5 rounded-full" action="/blogs/<%=item.id%>?_method=DELETE" method="POST">
+            <button type="submit">Delete</button>
+          </form>
+        </div>
+      </li>
+      <% } %>
+    </ul>
+  </body>
+</html>
